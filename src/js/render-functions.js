@@ -6,23 +6,24 @@ export function showImages(images, gallery) {
     .map(
       img =>
         `<li>
-                <a href="${img.largeImageURL}"><img class="gallery-img" src="${img.webformatURL}" alt="${img.tags}"></a>
+                <a class='gallery-link' href="${img.largeImageURL}">
+                <img class="gallery-img" src="${img.webformatURL}" alt="${img.tags}"></a>
                 <ul class="gallery-list">
-                    <li>
-                        <h2>Likes</h2>
-                        <p>${img.likes}</p>
+                    <li class='gallery-item'>
+                        <h2 class='gallery-title'>Likes</h2>
+                        <p class='gallery-value'>${img.likes}</p>
                     </li>
-                    <li>
-                        <h2>Views</h2>
-                        <p>${img.views}</p>
+                    <li class='gallery-item'>
+                        <h2 class='gallery-title'>Views</h2>
+                        <p class='gallery-value'>${img.views}</p>
                     </li>                    
-                    <li>
-                        <h2>Comments</h2>
-                        <p>${img.comments}</p>
+                    <li class='gallery-item'>
+                        <h2 class='gallery-title'>Comments</h2>
+                        <p class='gallery-value'>${img.comments}</p>
                     </li>                    
-                    <li>
-                        <h2>Downloads</h2>
-                        <p>${img.downloads}</p>
+                    <li class='gallery-item'>
+                        <h2 class='gallery-title'>Downloads</h2>
+                        <p class='gallery-value'>${img.downloads}</p>
                     </li>
                 </ul>
                 </li>`

@@ -19,8 +19,8 @@ formEl.addEventListener('submit', event => {
 
   if (cards.length === 0 || cards.trim() === '') {
     iziToast.error({
-      title: 'Error',
-      message: 'Illegal operation',
+      title: '',
+      message: 'Sorry, there are no images matching your search query. Please try again!',
     });
   } else {
     loaderEl.classList.remove('is-hidden');

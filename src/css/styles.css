@@ -80,14 +80,16 @@ input:focus {
   outline: transparent;
   outline-offset: 4px;
 }
-.gallery-image {
+.gallery-img {
   width: 360px;
   height: 152px;
 }
 
-.gallery-ul {
+.gallery-list {
   margin-top: 4px;
   margin-bottom: 4px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .gallery-items {
@@ -146,10 +148,6 @@ input:focus {
 }
 .div {
   display: flex;
-}
-.gallery-ul {
-  display: flex;
-  justify-content: space-around;
 }
 
 .loader {
