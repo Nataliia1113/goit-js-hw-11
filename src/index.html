@@ -11,30 +11,24 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-   
-    <section class="container">
+    <body>
       <form class="form">
-        <label>
-          <input
-            class="gallery-search"
-            type="text"
-            name="image_name"
-            placeholder="Search images..."
-          />
-        </label>
-
-        <button class="gallery-btn" type="submit">Search</button>
+        <input class="input" type="input" />
+        <button class="button" type="submit">Search</button>
       </form>
+  
+      <span class="loader hide">Loading images, please wait</span>
+        <ul class="gallery"></ul>
 
-      <span class="loader is-hidden">Loading images, please wait</span>
-
-      <ul class="gallery"></ul>
-      
-    </section>
-
-    <script type="module" src="./main.js"></script>
-  </body>
-</html>
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"
+        type="text/javascript"
+      ></script>
+      <script type="module" src="./main.js"></script>
+    </body>
+  </html>
+ 

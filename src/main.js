@@ -1,10 +1,8 @@
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
-
+// import iziToast from 'izitoast';
+// import 'izitoast/dist/css/iziToast.min.css';
 
 import { showImages } from './js/render-functions.js';
 import { getImages } from './js/pixabay-api.js';
-
 
 const formEl = document.querySelector('.form');
 const loaderEl = document.querySelector('.loader');
@@ -15,24 +13,18 @@ formEl.addEventListener('submit', event => {
 
   listEl.innerHTML = '';
 
-  const value = event.currentTarget.image_name.value;
+  // const cards = event.currentTarget.image_name.value;
+  const input = document.querySelector('input');
+  const cards = input.value.trim();
 
-  if (value.length === 0 || value.trim() === '') {
+  if (cards.length === 0 || cards.trim() === '') {
     iziToast.error({
-      title: '',
-      message: 'Could you, please choose some type of photos',
-      class: 'popup-message',
-      theme: 'dark',
-      backgroundColor: '#ef4040',
-      messageColor: '#fff',
-      iconUrl: cross,
-      position: 'topRight',
-      pauseOnHover: true,
-      timeout: 3000,
+      title: 'Error',
+      message: 'Illegal operation',
     });
   } else {
     loaderEl.classList.remove('is-hidden');
-    getImages(value)
+    getImages(cards)
       .then(data => {
         if (data.hits.length === 0) {
           iziToast.error({
