@@ -19,26 +19,17 @@ formEl.addEventListener('submit', event => {
 
   if (cards.length === 0 || cards.trim() === '') {
     iziToast.warning({
-      title: '',
       message: 'You forgot to enter details',
-  });
+    });
   } else {
     loaderEl.classList.remove('is-hidden');
     getImages(cards)
       .then(data => {
-        if (data.hits.length === 0) {
-          iziToast.error({
-            title: '',
+        
+        if (!data.hits.length) {
+          iziToast.info({
             message:
               'Sorry, there are no images matching your search query. Please try again!',
-            class: 'popup-message',
-            theme: 'dark',
-            backgroundColor: '#ef4040',
-            messageColor: '#fff',
-            iconUrl: cross,
-            position: 'topRight',
-            pauseOnHover: true,
-            timeout: 3000,
           });
         }
 
@@ -48,16 +39,7 @@ formEl.addEventListener('submit', event => {
       })
       .catch(() => {
         iziToast.error({
-          title: '',
-          message: 'Error while loading images!',
-          class: 'popup-message',
-          theme: 'dark',
-          backgroundColor: '#ef4040',
-          messageColor: '#fff',
-          iconUrl: cross,
-          position: 'topRight',
-          pauseOnHover: true,
-          timeout: 3000,
+          message: 'Error',
         });
       })
       .finally(() => {
